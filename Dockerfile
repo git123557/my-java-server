@@ -1,4 +1,4 @@
-# 使用多阶段构建减小镜像体
+# 构建阶段（使用JDK）
 FROM openjdk:8-slim AS builder
 WORKDIR /app
 COPY pom.xml .
@@ -10,5 +10,5 @@ RUN mvn clean package -DskipTests
 FROM openjdk:8-jre-slim
 WORKDIR /app
 COPY --from=builder /app/target/my-java-server-0.0.1-SNAPSHOT.jar .
-EXPOSE 80  # 修改为80端口
+EXPOSE 8080  # 暴露8080端口
 CMD ["java", "-jar", "my-java-server-0.0.1-SNAPSHOT.jar"]
