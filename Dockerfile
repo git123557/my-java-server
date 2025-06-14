@@ -1,4 +1,4 @@
-# 使用多阶段构建减小镜像体积
+# 使用多阶段构建减小镜像体
 FROM openjdk:8-slim AS builder
 WORKDIR /app
 COPY pom.xml .
