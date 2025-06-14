@@ -1,4 +1,4 @@
-# 使用官方 Java 基础镜像
+# 使用官方 Java 基础镜
 FROM openjdk:11-jre-slim
 
 # 设置工作目录
